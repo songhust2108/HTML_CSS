@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EXERCISE 1</title>
+	<style>
+	table{
+		border-radius: 5px;
+		border: 1px solid red;
+		width: 60%;
+		margin: 0 auto;
+
+
+	}
+	#errorname,#errorgender,#errorpwd,#errorcfpwd,#erroremail,#errorphone{
+		width: 28%;
+		color: red;
+		padding-left: 4px;
+	}
+	form{
+
+	}
+	button{
+		margin-top:40px;
+		background: red;
+		width: 80px;
+		height: 40px;
+		color: white;
+		margin-left: 400px;
+	}
+	#name,#pwd,#cfpwd,#phone,#email{
+		width: 100%;
+		height: 35px;
+		border-radius: 3px;
+	}
+	#delete{
+		margin-left: 80px;
+	}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<form action="">
+		<table>
+			<tr>
+				<td>Họ và tên :</td>
+				<td><input type="text" id="name" onkeyup="checkname()" ></td>
+				<td id="errorname">
+					
+				</td>
+			</tr>
+			<tr>
+				<td>Giới tính :</td>
+				<td>
+					<p>
+						<input type="radio" id="gender" >Nam
+						<input type="radio" id="gender" >Nữ
+					</p>
+				</td>
+				<td id="errorgender">
+					
+				</td>
+			</tr>
+			<tr>
+				<td>Email :</td>
+				<td><input type="email" id="email" onkeyup="checkemail()"></td>
+				<td id="erroremail">
+					
+				</td>
+			</tr>
+			<tr>
+				<td>Số điện thoại:</td>
+				<td><input type="text" id="phone" onkeyup="checkphone()"></td>
+				<td id="errorphone">
+					
+				</td>
+			</tr>
+			<tr>
+				<td>Mật khẩu:</td>
+				<td><input type="password" id="pwd" onkeyup="checkpwd()"></td>
+				<td id="errorpwd">
+					
+				</td>
+			</tr>
+			<tr>
+				<td>Xác nhận mật khẩu:</td>
+				<td><input type="password" id="cfpwd" onkeyup="checkcfpwd()"></td>
+				<td id="errorcfpwd">
+					
+				</td>
+			</tr>
+		</table>
+		<button type="submit" id="register" onclick="register()">Đăng kí</button>
+		<button type="reset" id="delete">Xóa trắng</button>
+
+	</form>
+
+	<div id="inforuser">
+		
+	</div>
+
+
+	<script>
+		function checkname() {
+			var name=document.getElementById('name').value;
+			if(name.length<8){
+				document.getElementById('errorname').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập tên ít nhất 8 kí tự";
+			}else if(name.length<1){
+				document.getElementById('errorname').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập vào trường này";
+			}else if(!isNaN(name)){
+				document.getElementById('errorname').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập bằng chữ";
+			}else{
+				document.getElementById('errorname').innerHTML="";
+			}
+		}
+
+
+		function validateEmail(email) {
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+		}
+		
+		function checkemail() {
+			var email=document.getElementById('email').value;
+			if(validateEmail(email) && email.length>1){
+				document.getElementById('erroremail').innerHTML="";
+			}else if(email.length<1){
+
+				document.getElementById('erroremail').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập trường này";
+
+			}else{
+				document.getElementById('erroremail').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập đúng định dạng email";
+			}
+		}
+
+
+		function checkphone() {
+			var phone=document.getElementById('phone').value;
+			if(isNaN(phone)){
+				document.getElementById('errorphone').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập bằng số";
+			}else if(phone.length<1){
+				document.getElementById('errorphone').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập trường này";
+			}else{
+				document.getElementById('errorphone').innerHTML="";
+			}
+		}
+
+
+		function checkpwd() {
+			var pwd=document.getElementById('pwd').value;
+			if(pwd.length<1){
+				document.getElementById('errorpwd').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Vui lòng nhập trường này";
+
+			}else{
+				document.getElementById('errorpwd').innerHTML="";
+			}
+		}
+
+
+		function checkcfpwd(){
+			var cfpwd=document.getElementById('cfpwd').value;
+			var pwd=document.getElementById('pwd').value;
+			if(cfpwd!=pwd){
+				document.getElementById('errorcfpwd').innerHTML="<i class='fa fa-exclamation' aria-hidden='true'></i>Mật khẩu xác nhận không đúng";
+			}else{
+				document.getElementById('errorcfpwd').innerHTML="";
+			}
+		}
+
+
+		function register(){
+
+			var name=document.getElementById('name').value;
+			var email=document.getElementById('email').value;
+			var phone=document.getElementById('phone').value;
+			var pwd=document.getElementById('pwd').value;
+
+			document.getElementById('inforuser').innerHTML=name;
+			document.getElementById('inforuser').innerHTML=email;
+			document.getElementById('inforuser').innerHTML=phone;
+			document.getElementById('inforuser').innerHTML=pwd;
+
+		}
+
+
+	</script>
+</body>
+</html>

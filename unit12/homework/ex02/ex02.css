@@ -1,0 +1,75 @@
+body{
+	background-color: black;
+}
+*{
+	margin: 0px;
+}
+#dong1{
+	height: 50px;
+	width: 300px;
+}
+#AK{
+	float: left;
+	height: 50px;
+	width: 135px;
+	color: white;
+}
+#VT{
+	height: 50px;
+	line-height: 50px;
+	color:  #00b300;
+}
+#dong2{
+	height: 50px;
+	line-height: 50px;
+}
+#dong2>p{
+	color:  white;
+}
+#hr{
+	width: 50px;
+	height: 1px;
+	float: left;
+	margin-top: 23px;
+	background-color:  #00b300;
+	border: 1px solid  #00b300;
+}
+#dong2>i{
+	float: left;
+	line-height: 50px;
+	font-size: 20px;
+	color:  #00b300;
+}
+.head{
+	height: 25px;
+	width: 502px;
+	background-color: black;
+	text-align: center;
+}
+.icon{
+	float: left;
+	height: 25px;
+	width: 25px;
+	background-color: #00b300;
+	line-height: 25px;
+}
+
+.head-text{
+	height: 25px;
+	line-height: 25px;
+	color: #00b300;
+	font-size: 20px;
+	text-align: left;
+	border: 1px solid #c3c3a2;
+}
+
+.content{
+	height: 126px;
+	width: 475px;
+	background-color: black;
+	color: white;
+	display: none;
+	border: 1px solid #c3c3a2;
+	padding-left: 25px;
+	padding-top: 12px;
+}

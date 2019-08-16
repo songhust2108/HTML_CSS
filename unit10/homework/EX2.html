@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 2</title>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		*{
+	margin:0;
+	padding: 0;
+}
+
+.slide{
+	height: 300px;
+	width: 500px;
+	/*margin-top: 10px;*/
+	overflow: hidden;
+	margin: 10px auto;
+	border: 1px gray;
+	position: relative;
+}
+
+.slide img{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	
+}
+
+.slide .left , .slide .right{
+	height: 40px;
+	width: 40px;
+	border-radius: 5px;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	cursor: pointer;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	opacity: 0.7;	
+}
+
+.slide div:hover{
+	opacity: 1;
+}
+
+.slide .left{
+	top: 40%;
+	left: 10px;
+}
+
+
+.slide .right{
+	top: 40%;
+	right: 10px;
+}
+
+.active{
+	display: block !important;
+}
+
+.dot{
+	position: absolute;
+	bottom: 5px;
+	left: 45%;
+
+}
+.dot ul{
+	list-style-type: none;
+
+}
+
+.dot li{
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	background: #ccc;
+	border-radius: 50%;
+	cursor: pointer;
+}
+/**/
+	</style>
+	
+</head>
+<body>
+	<div class="slide">
+		<img src="085912-101201-dhbk1.jpg" alt="" class="anh active" id="img1">
+		<img src="1c6439d3-226a-4a65-8b7e-380cec99f031.jpg" alt="" class="anh" id="img2">
+		<img src="bachkhoa3.jpg" alt="" class="anh" id="img3">
+		<img src="dh-bach-khoa-hn-1497407682437-1498352051118.jpg" alt="" class="anh" id="img4">
+		<img src="kham-pha-ve-dep-khong-dau-co-cua-truong-dh-bach-khoa-hn-qua-anh.jpg" alt="" class="anh" id="img5">
+		<div class="left" onclick="slide(-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+		<div class="right" onclick="slide(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+		<div class="dot">
+			<ul>
+				<li id="dot1" onclick="choose(this)" class="point dot_active"></li>
+				<li id="dot2" onclick="choose(this)" class="point"></li>
+				<li id="dot3" onclick="choose(this)" class="point"></li>
+				<li id="dot4" onclick="choose(this)" class="point"> </li>
+				<li id="dot5" onclick="choose(this)" class="point"></li>
+			</ul>
+		</div>
+	</div>
+	<script >
+				var index = 0;
+		var total = document.getElementsByClassName('anh').length;
+		var timeout;
+		
+		function slide(x){
+			clearTimeout(timeout);
+			if(index >= total && x === 1){
+				index = 1;
+			}
+			else if(index <= 1 && x === -1){
+				index = total;
+			}
+			else{
+				index += x;
+			}
+			// alert(index)
+			for (var i = 1; i <= total; i++) {
+				document.getElementById('img'+i).classList.remove('active');
+				document.getElementById('dot'+i).classList.remove('dot_active');
+			}
+			document.getElementById('img'+index).classList.add('active');
+			document.getElementById('dot'+index).classList.add('dot_active');
+			timeout = setTimeout(change,10000);
+		}
+		change();
+		function change(){
+			var total = document.getElementsByClassName('anh').length;
+			for (var i = 1; i <= total; i++) {
+				document.getElementById('img'+i).classList.remove('active');
+				document.getElementById('dot'+i).classList.remove('dot_active');
+			}
+			index++;
+			if(index > total){ index = 1;}
+			document.getElementById("img"+index).classList.add("active");
+			document.getElementById('dot'+index).classList.add('dot_active');
+			timeout = setTimeout(change,10000);
+		}
+
+		 function choose(i){
+		 	clearTimeout(timeout);
+		 	
+			var overall = document.getElementsByClassName('point');
+			overall = Array.from(overall);
+			index = overall.indexOf(i)+1;
+			for (var i = 1; i <= total; i++) {
+				document.getElementById('img'+i).classList.remove('active');
+				document.getElementById('dot'+i).classList.remove('dot_active');
+			}
+			document.getElementById('img'+index).classList.add('active');
+			document.getElementById('dot'+index).classList.add('dot_active');
+			timeout = setTimeout(change,10000);
+		 }
+	</script>
+</body>
+</html>

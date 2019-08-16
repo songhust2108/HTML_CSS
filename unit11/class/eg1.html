@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ví dụ 1</title>
+</head>
+<body>
+	<div id="div">
+		Ahihi
+	</div>
+	<p class="text">
+		Lorem ipsum dolor sit amet.
+	</p>
+	<h3 class="h3">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, vero.
+	</h3>
+	<script type="text/javascript" src="js/jquery.min.js">
+		
+ 	</script>
+ 	<script type="text/javascript" >
+		$(function () {
+			//nguyên tắc truy vấn thẻ giống css
+			// $('#div')//document.getElementById('div');
+			$('.text').css({'color':'red','fontSize':'30px'});
+			//$('text').css('color','red').css('fontSize','30px');
+			
+			$('p,h3').css({'color':'red','fontSize':'30px'});
+
+
+			//lấy hết thẻ p chứa trong body
+			$('body p').css({'color':'red','fontSize':'30px'});
+		});
+	</script>
+</body>
+</html>

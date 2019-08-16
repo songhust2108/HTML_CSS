@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vis duj 5</title>
+	<style>
+		div{
+			background-color: green;
+			width: 200px;
+			height: 200px;
+			position: relative;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+	</div>
+	<button>click</button>
+	<script type="text/javascript" src="js/jquery.min.js">
+		
+	</script>
+
+	<script type="text/javascript">
+		$(function () {
+			$('button').click(function(){
+				$('div').animate({
+					left:'200px',
+					top:'200px',
+
+				},5000,function(){
+					$('div').css('backgroundColor','red');
+				}).slideToggle(1000).slideToggle(1000).slideToggle(1000).slideToggle(1000);
+			})
+		})
+	</script>
+</body>
+</html>

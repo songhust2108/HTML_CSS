@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 2</title>
+	<style>
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#steps ul{
+		list-style: none;
+		
+	}
+	#steps ul li{
+		height: 40px;
+		width: 80px;
+		background-color: #2184be;
+		float:left;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin: 25px;
+		border-radius: 5px;
+		line-height: 40px;
+		color: white;
+
+
+	}
+	#content{
+		clear:both;
+		width: 600px;
+		height: 400px;
+		background-color: #eee;
+		margin-left: 20px;
+		border-radius: 5px;
+
+	}
+	#controls{
+		clear: both;
+		width: 600px;
+		height: 400px;
+		margin-left: 20px;
+	}
+	hr{
+		margin: 20px;
+	}
+	#content .title{
+		height: 30px;
+	}
+	#content .title h3{
+		line-height: 30px;
+	}
+	#frm-acc input{
+		margin-top: 10px;
+		margin-right: 10px;
+
+	}
+	#prev,#next{
+		background-color: #2184be;
+		width: 70px;
+		height: 30px;
+		border-radius: 5px;
+		margin-right: 10px;
+		color: white;
+		margin-top: 20px;
+		border: 0px;
+	}
+	#tab-pro,#tab-war,#tab-fin,#prev{
+		background-color: #eee !important;
+		color: #888 !important;
+	}
+	.err{
+		color: red;
+	}
+</style>
+</head>
+<body>
+	<div id="steps">
+		<ul>
+			<li id="tab-acc">1.Account</li>
+			<li id="tab-pro">2.Profile</li>
+			<li id="tab-war">3.Warning</li>
+			<li id="tab-fin">4.Finish</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="frm-acc">
+			<div class="title">
+				<h3>Account Information</h3>
+			</div>
+			<hr>
+			<div>
+				<label for="">Username*</label>
+				<label for="" class="err" id="err-username"></label><br>
+				<input type="text" name="username" id="username"><br>
+				
+				<label for="">Password*</label>
+				<label for="" class="err" id="err-pwd"></label><br>
+				<input type="password" name="pwd" id="pwd"><br>
+				
+				<label for="">Confirm password*</label>
+				<label for="" class="err" id="err-cf-pwd"></label><br>
+				<input type="password" name="cf-pwd" id="cf-pwd"><br>
+
+				<label for="">(*) Mandatory</label>
+				
+			</div>
+		</div>
+		
+		<div id="frm-pro">
+			<div class="title">
+				<h3>Profile Information</h3>
+			</div>
+			<hr>
+			<div>
+				<label for="">First name *</label>
+				<label for="" class="err" id="err-firstname"></label><br>
+				<input type="text" name="firstname" id="firstname"><br>
+				
+				<label for="">Last name *</label>
+				<label for="" class="err" id="err-lastname"></label><br>
+				<input type="text" name="lastname" id="lastname"><br>
+				
+				<label for="">Email *</label>
+				<label for="" class="err" id="err-email"></label><br>
+				<input type="email" name="email" id="email"><br>
+				
+				<label for="">Address</label><br>
+				<input type="email" name="email" id="email"><br>
+				
+				<label for="">Age (The warning step will show up if age is less than 18) *</label>
+				<label for="" class="err" id="err-age"></label><br>
+				<input type="number" name="age" id="age"><br>
+				<label for="">(*) Mandatory</label>
+				
+			</div>
+		</div>
+
+
+
+
+		<div id="frm-warn">
+			<div class="title">
+				<h3>You are to young</h3>
+			</div>
+			<hr>
+			<div>
+				<p> Please go awaya ;-)</p>
+			</div>
+		</div>
+
+		<div id="frm-fin">
+			<div class="title">
+				<h3>Terms and Conditions</h3>
+			</div>
+			<div>
+				<input type="checkbox" id="check"> I agree with the Terms and Conditions.
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<div id="controls">
+		<button id="prev">Previous</button>
+		<button id="next">Next</button>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	
+</body>
+</html>

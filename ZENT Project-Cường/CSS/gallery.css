@@ -1,0 +1,22 @@
+#gallery {
+	padding: 100px 15px;
+}
+.well {
+	margin-bottom: 30px;
+}
+.thumbnail.row {
+	margin-right: -15px;
+}
+.btn-primary {
+	color: #fff;
+}
+.btn-primary:hover {
+	text-decoration: underline;
+}
+.choose {
+	background: #222222;
+    text-align: center;
+    border-radius: 5px;
+    padding: 17px 0;
+    margin-bottom: 30px;
+}

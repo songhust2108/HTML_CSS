@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz Event</title>
+</head>
+<body>
+	<form action="" method="post" onsubmit="test()">
+		<input type="email" name="email" id="email" required="" onkeyup="checkemail()">
+		<p id="ErrorEmail">
+			
+		</p>
+		<input type="password" name="password" id="password" required="" onkeyup="checkpwd(this)">
+		<p id="ErrorPass"></p>
+		<button type="Submit" disabled id="sb" onclick="enable(this,this)"> Submit</button>
+	</form>
+	<script>
+
+		var flag1=false;
+		var flag2=false;
+
+		//check nút được ấn hay không được ấn.
+		function enable(a,b){
+			if (a && b) {
+				document.getElementById('sb').disabled=false;
+			}else{
+				document.getElementById('sb').disabled=true;
+			}
+
+		}
+
+		function validateEmail(email) {
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+		}
+		
+
+
+		function checkemail(){
+			var email=document.getElementById('email').value;
+			if(validateEmail(email)){
+				document.getElementById('ErrorEmail').innerHTML="";
+				flag1=true;
+			}else{
+				document.getElementById('ErrorEmail').innerHTML="Please type email right";
+				flag1=false;
+			}
+			enable(flag1,flag2);
+		}
+
+		// function validatePwd(password){
+		// 	var re=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+		// 	return re.test(String(password).toLowerCase());
+		// }
+
+
+		// function checkpwd(){
+		// 	var pwd=document.getElementById('password');
+		// 	var length=document.getElementById('password').value;
+		// 	if(validatePwd(pwd)&& (length==6)){
+		// 		document.getElementById('ErrorPass').innerHTML="";
+		// 		flag2=true;
+		// 	}else if(!validatePwd(pwd)&& (length==6)){
+		// 		document.getElementById('ErrorPass').innerHTML="Please type password right";
+		// 		flag2=false;
+		// 	} else if(!validatePwd(pwd)&& (length!=6)){
+		// 		document.getElementById('ErrorPass').innerHTML="Please type 6 character";
+		// 		flag2=false;
+		// 	}else{
+		// 		document.getElementById('ErrorPass').innerHTML="Please type 6 character and password right";
+		// 		flag2=false;
+		// 	}
+		// 	enable(flag1,flag2);
+		// }
+		// 
+		// 
+		function checkpwd(a){
+			var pwd=a.value.length;
+			if(pwd<6){
+				document.getElementById('ErrorPass').innerHTML="Nhập đủ 6 kí tự!";
+				flag2=false;
+			}else{
+				document.getElementById('ErrorPass').innerHTML="";
+				flag2=true;
+			}
+			enable(flag1,flag2);
+		}
+	
+
+
+
+</script>
+
+</body>
+</html>

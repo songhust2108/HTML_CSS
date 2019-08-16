@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise6</title>
+</head>
+<body>
+	<div>
+		<h2>Tính tổng </h2>
+		<h3>Click vào để in tổng</h3>
+	</div>
+	Nhập số N: <input type="text" id="number"><br>
+	<button onclick="Sum()" style="width: 80px;height: 70px;">In tổng</button>
+
+	<div id="result" >
+		
+	</div>
+	<script type="text/javascript">
+		
+		var sum = 0; var k=1;
+		function Sum(){
+			var a=document.getElementById('number').value;
+			var x=parseInt(a);
+			for (var i = 1; i <=x; i++) {
+				for(var j=1;j<=i;j++){
+					k*=j;
+					
+				}
+				sum+=i/k;
+			}
+			document.getElementById('result').innerHTML="Tổng là: "+ sum;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<p style="font-size: 20px;">
+			<b>Click vào để biết hết các số chia hết cho 3 và 7.</b>
+		</p>
+	</div>
+	<button onclick="clickme()"> Click me</button>
+	<script type="text/javascript">
+		function clickme(){
+			var s=0;
+			var count=0;
+			for (var i = 1; i <=100; i++) {
+				if( i %3==0 ||  i%7==0){
+					s+=i;
+					count+=1;
+				}
+			}
+			alert("Tổng các số chia hết cho 3 hoặc 7 là: "+s);
+			alert("Số các số cho 3 hoặc 7 là: "+count);
+		}
+	</script>
+	
+</body>
+</html>

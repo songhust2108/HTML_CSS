@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 2</title>
+	<style>
+	#btn1{
+		width: 30%;
+		border: 1px solid #000;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+	}
+	#btn1 h3{
+		padding-bottom: 40px;
+		margin-left: 10px;
+	}
+	#btn1 button{
+		margin-right: 14px;
+		margin-left: 10px;
+	}
+	#btn2{
+		width: 50%;
+	}
+	#btn2 p{
+		text-align: justify;
+	}
+</style>
+</head>
+<body>
+	<div id="btn1">
+		<h3>Cỡ chữ</h3>
+		<button id="default" type="button" >Mặc định</button>
+		<button id="big" type="button">Lớn</button>
+		<button id="small" type="button">Nhỏ</button>
+	</div>
+	<div id="btn2">
+		<p id="content"> Pellentesque habitant morbi tristique senectus et netus et malesuada fames acc turpiss egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit quam egestas semper. Aenean ultricies mi vitae est.</p>
+	</div>
+
+
+	<script>
+		var a=document.getElementById('content');
+		var x=window.getComputedStyle(a,null).getPropertyValue('font-size');
+		var size_default=parseFloat(x);
+	
+		document.getElementById('default').onclick=function(){
+			a.style.fontSize=size_default+'px';
+		}
+
+		document.getElementById('big').onclick=function(){
+			
+			a.style.fontSize= (size_default+0.4*size_default)+'px';
+		}
+
+		document.getElementById('small').onclick=function(){
+			
+			a.style.fontSize= (size_default-0.4*size_default)+'px';
+		}
+	</script>
+</body>
+</html>

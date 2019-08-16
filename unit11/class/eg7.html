@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ví dụ 7</title>
+</head>
+<body>
+	<div data-name="Song" abc="sbc" data-age="22">
+		click
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js">
+		
+	</script>
+
+	<script type="text/javascript">
+		$(function () {
+			$('div').click(function(){
+				var abc=$(this).attr('abc');
+				var name=$(this).data('name');
+				alert(abc);
+			})
+		})
+	</script>
+</body>
+</html>

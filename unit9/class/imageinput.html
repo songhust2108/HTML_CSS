@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IMAGE/INPUT</title>
+</head>
+<body>
+	<img src="images/ip.jpg" alt="" onmouseover="bigImage(this)" onmouseout="
+	smallImage(this)" >
+	<!-- sự kiện rê chuột vào.ra -->
+
+	<input type="text" onblur="test(this)" value="ahihi" onfocus="test1(this)">
+	<!-- onforcus là sự kiện cho chuột vào còn cái onblur là cho chuột ra -->
+	<!-- onblur dùng để check sự kiện số kí tự nhập vào. -->
+	<p></p>
+	<script>
+
+		//cho ảnh to ra. a chính là this.
+		function bigImage(a) {
+			a.style.width="500px";
+			a.style.height="500px";
+			a.style.borderRadius="50%";
+			// a.style.backgroundColor;
+		}
+
+
+		//cho ảnh nhỏ lại
+		function smallImage(a){
+			a.style.width="200px";
+			a.style.height="200px";
+		}
+
+
+		function test(a){
+			a.value= a.value.toUpperCase();
+			a.style.borderColor="red";
+		}
+		function test1(a){
+			a.style.borderColor="green";
+		}
+	</script>
+</body>
+</html>

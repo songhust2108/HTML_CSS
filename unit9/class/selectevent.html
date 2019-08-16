@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SELECT EVENT</title>
+</head>
+<body>
+	
+
+	<!-- <input type="text"   onblur="test(this)" onkeyup="test1(this)"> -->
+	<!-- onforcus là sự kiện cho chuột vào còn cái onblur là cho chuột ra -->
+	<!-- onblur dùng để check sự kiện số kí tự nhập vào. -->
+	<!-- ONCHANGE DÙNG CHO THẺ SELECT -->
+<!-- 	<p id="error"></p> -->
+	<select name="" id="" onchange="test2(this)">
+		<option value="1"> Hà Nội</option>
+		<option value="2" checked="true">Hồ Chí Minh</option>
+		<option value="3">Hà Tĩnh</option>
+	</select>
+
+
+	<select name="" id="district" >
+		<option value=""> --Chọn--</option>
+	</select>
+
+	<select name="" id="ward" >
+		<option value=""> --Chọn--</option>
+	</select>
+
+
+	<script type="text/javascript">
+
+// 		function test(a){
+
+// 			if (a.value.length<6) {
+// 				document.getElementById('error').innerHTML='Nhập đủ 6 kí tự đi bé!';
+// 			}else{
+// 				document.getElementById('error').innerHTML='';
+// 			}
+// 		}
+
+
+// 		function test1(a) {
+// 			console.log(a.value);
+// 			if (a.value.length<6) {
+// 				document.getElementById('error').innerHTML='Nhập đủ 6 kí tự đi bé!';
+// 			}else{
+// 				document.getElementById('error').innerHTML='';
+// 			}
+// 		}
+
+// 		function test2(a) {
+// // body...
+// // 
+// a.
+// console.log(a.value);
+// }
+function test2(a){
+	var b=document.getElementById('district');
+	if(a.value==1){
+		b.innerHTML='<option value="1">Ba Đình</option><option value="2">Đống Đa</option><option value="3">Thanh Xuân</option>';
+	}else if(a.value==2){
+		b.innerHTML='<option value="1">Quận 1</option><option value="2">Quận 12</option><option value="3">Quận 3</option>';
+	}else{
+		b.innerHTML='<option value="1">Lộc Hà</option><option value="2">Lộc Hà</option><option value="3">Lộc Hà</option>';
+	}
+}
+</script>
+</body>
+</html>

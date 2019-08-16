@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 1</title>
+	<style>
+		 #checkall{
+			margin-left: 25%;
+			margin-top: 30px;
+		}
+	</style>
+	
+</head>
+<body>
+	<form action="">
+		<table border="1px" bgcolor="#5ca594" width="50%" align="center">
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Ullamco laboris nisi ut aloquip ex ea commodo consequat
+				</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit
+				</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Excepteur sint accaecat cupidatat
+				</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Dolore eu fugiat nulla pariatur
+				</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Consectetur adipisicing elit, sed do eiusmod
+				</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit
+				</td>
+			</tr>
+			<tr onmouseout="test(this)" onmouseover="test1(this)">
+				<td>
+					<input type="checkbox" name="item[]">
+				</td>
+				<td>
+					Consectetur adipisicing elit, sed do eiusmod
+				</td>
+			</tr>
+		</table>
+		<button type="button" id="checkall" >Check All</button>
+		<button type="reset" >Uncheck All</button>
+	</form>
+
+	
+	
+
+
+
+
+	<script>
+		function test1(a) {
+			a.style.backgroundColor="blue";
+		}
+		function test(a) {
+			a.style.backgroundColor="#5ca594";
+		}
+
+		document.getElementById('checkall').onclick=function(){
+			var items=document.getElementsByName('item[]');
+			for (var i = 0; i <=items.length; i++) {
+				items[i].checked=true;
+			}
+		}
+
+
+	</script>
+</body>
+</html>

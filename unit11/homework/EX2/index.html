@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 2</title>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+	<script type="text/javascript" src=""></script>
+	<style>
+	*{
+		margin: 0;
+		padding:0;
+	}
+
+	.image{
+		width: 1000px;
+		height: 500px;
+		margin:auto;
+		
+		position: relative;
+	}
+
+		.image>div>img{
+			width: 30%;
+		}
+
+		.image button{
+			margin-left: 12%;
+		}
+
+		img:hover{
+			opacity: 0.8;
+		}
+	.zoom{
+		width: 1000px;
+		height: 500px;
+		background-color: rgba(0,0,0,.6);
+		position: absolute;
+		top: 0;
+		text-align: center;
+		transition: 0.4s;
+		display: none;
+	}
+
+		.zoom img{
+			width: 60% !important;
+			margin:25px 20% 0 20%;
+		}
+
+		.zoom p{
+			height: 40px;
+			width: 60%;
+			margin:0 auto;
+			background-color: rgba(255,255,255,.7);
+			line-height: 40px;
+		}
+
+	.close{
+		width: 35px;
+		height: 35px;
+		font-size: 35px;
+		position: absolute;
+		top: 27px;
+		right: 201px;
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<div class="image">
+		<div>
+			<img src="bachkhoa3.jpg" alt="" id="img">
+		</div>
+		
+		<button id="button">show</button>
+		<div class="zoom">
+			<img src="bachkhoa3.jpg" alt="">
+			<p>Ha Noi University Sience And Technology</p>
+		</div>
+		<div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+	</div>
+	<script>
+		$(function(){
+			var x= $('#img').attr('src');
+			$('#button').on('click', function(){
+				
+				$('.zoom').show();
+				$('.close').show();
+			})
+
+			$('.close').on('click', function(){
+				$('.zoom').hide();
+				$('.close').hide();
+			})
+		});
+	</script>
+</body>
+</html>

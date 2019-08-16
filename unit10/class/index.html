@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Buổi 10</title>
+	
+</head>
+<body>
+	<input type="text" id="input" onkeyup="checkValidate()">
+	<button onclick="add()" disabled id="add">Add</button>
+	<button onclick="togglecheck(true)" id="checkall">Check All</button>
+	<button onclick="togglecheck(false)"  id="uncheckall" type="reset">Uncheck All</button>
+	<button onclick="deleteall()"  id="deleteall">Delete All</button>
+
+
+	<table >
+
+		<tbody id="content">
+			
+		</tbody>
+	</table>
+
+
+	<script>
+		//idea: khi người dùng click vào nút add thì kiểm tra giá trị ô input
+		//nếu ô input bằng null thì in ra thông báo bắt nhập nội dung vào
+		//nếu ô input khác null thì tạo ra một bảng ba cột, với cột thứ 2 là giá trị của ô input được nhập vào
+		//để sau khi nhập vào giá trị ô input trở về rỗng thì gán lại gia trị nó bằng null;
+		
+		var i=0;//để check dòng thứ mấy để xóa.
+
+		function checkValidate(){
+			var a=document.getElementById('input');
+			if(a.value!=''){
+				document.getElementById('add').disabled=false;
+
+			}else{
+				document.getElementById('add').disabled=true;
+
+			}
+		}
+		
+		function add() {
+			var a=document.getElementById('input');
+			var tr='<tr id="'+i+'" ><td><input class="check" type="checkbox" name="" value="'+i+'"></td><td>'+a.value+'</td><td><button>Show</button><button onclick="edit('+i+')">Edit</button><button  onclick="del('+i+')">Delete</button></td></tr>';
+				//append vào table
+				document.getElementById('content').innerHTML=document.getElementById('content').innerHTML + tr;
+				
+				a.value = '';
+				document.getElementById('add').disabled=true;
+				i++;
+			}
+			function del(id) {
+				document.getElementById(id).remove();
+			}
+
+		// function checkall(){
+		// 	var check=document.getElementsByClassName('check');
+		// 	for (var i =0; i<check.length; i++) {
+		// 		check[i].checked=true;
+		// 	}
+		// }
+
+		// function uncheckall(){
+		// 	var check=document.getElementsByClassName('check');
+		// 	for (var i =0; i<check.length; i++) {
+		// 		check[i].checked=false;
+		// 	}
+		// }
+		function togglecheck(a) {
+			var check=document.getElementsByClassName('check');
+			for (var i =0; i<check.length; i++) {
+				check[i].checked=a;
+			}
+		}
+
+
+		function deleteall(){
+			var check=document.getElementsByClassName('check');
+			debugger;
+			for (var k =0; k<=check.length-1; k++) {
+				if(check[k].checked==true){
+					document.getElementById(check[k].value).remove();
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

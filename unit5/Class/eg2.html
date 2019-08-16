@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- meta:vp để ra hàng trên -->
+	<style>
+		.div1{
+			background-color: red;
+			float: left;
+			width: 50%;
+			height: 200px;
+
+		}
+		.div2{
+			background-color: green;
+			float: left;
+			width: 50%;
+			height: 200px;
+			
+		}
+		/*>= <= thỏa mãn cả 2*/
+		@media (min-width: 400px) and (max-width: 768px) {
+			.div1, .div2{
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">
+		
+	</div>
+	<div class="div2">
+		
+	</div>
+</body>
+</html>

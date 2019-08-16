@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		Nhập N:  <input type="" id="number">
+	</div>
+	<button onclick="square()">
+		print square
+	</button>
+	<div style="text-align: left; width: 100%;" id="text1">
+		
+	</div>
+
+	<button onclick="triangle()">
+		print triangle
+	</button>
+	<div style="text-align: left; width: 100%;" id="text2">
+		
+	</div>
+
+	<button onclick="squareempty()">
+		print squareempty
+	</button>
+	<div style=" width: 100%;" id="text3">
+		
+	</div>
+
+	<button onclick="trianglereverse()">
+		print trianglereverse
+	</button>
+	<div style=" width: 100%;" id="text4">
+		
+	</div>
+
+	<script>
+		function square(){
+			var n = document.getElementById('number').value;
+			var square = "";
+
+			for (var i = 0; i <= n; i++) {
+				for (var j = 0; j <= n; j++) {
+					square +="*";
+				}
+				square +="<br>"
+			}
+			document.getElementById("text1").innerHTML = square;
+		}
+		function triangle(){
+			var n = document.getElementById('number').value;
+			var triangle= "";
+
+			for (var a = 0; a <= n; a++) {
+				for (var b = 0; b <= a; b++) {
+					triangle +="*";
+				}
+				triangle +="<br>"
+			}
+			document.getElementById("text2").innerHTML = triangle;
+		}
+		function squareempty(){
+			var n = document.getElementById('number').value;
+			var squareempty = "";
+
+			for (var x = 0; x < n; x++) {
+				for (var y = 0; y < n; y++) {
+					if (x==0||y==0||x==n-1||y==n-1) {
+						squareempty +="*";
+					}
+					else{
+						squareempty +="&nbsp&nbsp";
+					}
+				}
+				squareempty +="<br>"
+			}
+			document.getElementById("text3").innerHTML =squareempty;
+		}
+		function trianglereverse(){
+			var n = document.getElementById('number').value;
+			var trianglereverse = "";
+
+			for (var i = n; i <= n; i--) {
+				for (var j = 0; j<= i; j++) {
+					trianglereverse +="*";
+				}
+				trianglereverse +="<br>"
+				if (i==0) {
+					break;
+				}
+			}
+			document.getElementById("text4").innerHTML =trianglereverse;
+		}
+	</script>
+</body>
+</html>

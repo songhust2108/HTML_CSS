@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ví dụ 2</title>
+	<style>
+		div{
+			width: 60%;
+			height: 400px;
+			display: none;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="click">Click</button>
+	<div>
+		
+	</div>
+	
+
+
+
+	<script type="text/javascript" src="js/jquery.min.js">
+		
+	</script>
+	<script type="text/javascript">
+		$(function () {	
+			$('#click').click(function(){
+				$('div').slideToggle();
+			})
+		})
+	</script>
+</body>
+</html>

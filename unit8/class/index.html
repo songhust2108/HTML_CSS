@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+			/*-moz-//fire fox ;
+			-o- //opera;
+			-webkit-//safari;
+			border-radius: //không có gì;mặc định cho gg chrome;*/
+			width: 200px;
+			height: 200px;
+			/*background: green;*/
+			position: relative;/* phải có thì mới chạy được*/
+			/*border-radius: 100px;*/
+			animation-name: song;
+			animation-duration: 4s;
+			/*trong vòng 4s nó chạy từ xanh sang đỏ;*/
+			animation-iteration-count: infinite;
+
+			/*chạy liên tục không nghỉ*/
+
+			animation-direction: reverse;
+			/*đảo ngược chiều chạy*/
+			/*transform: scale(2,3);*/
+			background: linear-gradient(red,yellow);
+
+
+		}
+
+		/*dùng để định nghĩa keyframes*/
+		@keyframes song{
+			/*trong vòng 4s nó sẽ chạy tại các điểm dưới. tại thời điểm 10% nó sẽ chạy vị trí x,y*/
+			/*đến tọa độ nào đấy sẽ css lại */
+			0%{
+				top: 0px;
+				left:0px;
+			}
+			10%{
+				left: 600px;
+				top: 0px;
+				border-radius: 100px;
+				background: red;
+			}
+			20%{
+				left: 0px;
+				top: 600px;
+
+			}
+			30%{
+				top: 0px;
+				left: 0;
+				background: linear-gradient(red,yellow);
+
+			}
+			40%{
+				left: 600px;
+				top: 0px;
+				background: linear-gradient(red,yellow);
+
+			}
+			50%{
+				top: 600px;
+				left: 600px;
+			}
+			60%{
+				top: 600px;
+				left: 0px;
+				border-radius: 100px;
+				background: red;
+				background: linear-gradient(green,yellow);
+
+			}
+			100%{
+				top: 0px;
+				left: 0px;
+			}
+
+
+			/*
+			
+			 from{
+				background-color: green;
+
+			}
+			to{
+				background: red;
+				}*/
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<marquee direction="up" behavior="alternate" width="200px" height="200px" loop="infinite">
+			<p>One or more lines or text message or image</p>
+			<p>One or more lines or text message or image</p>
+			<p>One or more lines or text message or image</p>
+		</marquee>
+	</body>
+	</html>

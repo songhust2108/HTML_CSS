@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise3</title>
+</head>
+<body>
+	<div>
+		<h2>Tính tổng 10 số chẵn đầu tiên do người dùng nhập vào</h2>
+		<h3>Click vào để in tổng</h3>
+	</div>
+	Nhập số bắt đầu: <input type="text" id="start"><br>
+	Nhập số kết thúc: <input type="text" id="finish"><br>
+	<button onclick="Sum()" style="width: 80px;height: 70px;">In tổng</button>
+
+	<div id="result" >
+		
+	</div>
+	<script type="text/javascript">
+		var sum = 0;
+		function Sum(){
+			var a=document.getElementById('start').value;
+			var x=parseInt(a);
+			var b=document.getElementById('finish').value;
+			var y=parseInt(b);
+			var count=0;
+			if (x<y) {
+				for (var i = x; i <=y; i++) {
+					if(i%2==0 && count<=10){
+						sum+=i;
+						count++;
+					}
+					// count++;
+				}
+				document.getElementById('result').innerHTML="Tổng 10 số chẵn đầu tiên là: "+ sum;
+			}else{
+				document.getElementById('result').innerHTML=" Không thỏa mãn.<br> Hãy nhập giá trị đầu nhỏ hơn giá trị cuối.";
+			}
+
+			}
+</script>
+</body>
+</html>

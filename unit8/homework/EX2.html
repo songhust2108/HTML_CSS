@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Exercise2</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<legend>ZENT GROUP - JAVASCRIPT</legend>
+
+	<div class="form-group">
+		<label for="">Giá trị của N</label>
+		<input type="text" class="form-control" id="" placeholder="Nhập số nguyên N" name="Number">
+	</div>
+	<div>
+		<p style="font-size: 18px;font-weight: bold;">Click để tính tổng</p>
+	</div>
+	<button type="submit" class="btn btn-primary" name="submit" onclick="Sum()">Tính tổng</button>
+
+	<div id="result">
+		
+	</div>
+	<script type="text/JavaScript">
+		function Sum(){
+			var Sum=0;
+			var N= document.getElementsByName('Number')[0].value;
+			var i=0;
+			do{
+				Sum+=i;
+				i++;
+			}while(i<=N)
+			document.getElementById('result').innerHTML="Tổng các số từ 1+2+3+...+n = "+Sum;
+		}
+	</script>
+</body>
+</html>

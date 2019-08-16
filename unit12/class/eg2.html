@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eg 2</title>
+</head>
+<body>
+	<div>
+		<input type="text">
+		<select name="" id="select" onchange="changeCountry()">
+			<option value="1">Hà Nội</option>
+			<option value="2">Tp HCM</option>
+		</select>
+	</div>
+	<div id="content"> 
+		
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+
+		//changecountry là của js.
+		function changeCountry() {
+			var select=$('select').val();
+			// alert(select);
+			$('#content').prepend("<p>"+select+"</p>");//append ra phía sau
+
+
+			// before là sẽ thêm trước thẻ content, after thêm ngoài thẻ content
+		 	//prepend sẽ thêm vào trước
+		 	//
+		}
+	</script>
+</body>
+</html>

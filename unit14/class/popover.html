@@ -1,0 +1,50 @@
+<!-- có thể tự hover đổi màu  -->
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+	<title>popover</title>
+</head>
+<body>
+	<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover">
+		Popover on top
+	</button>
+
+	<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover">
+		Popover on right
+	</button>
+
+	<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+	sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover">
+	Popover on bottom
+	</button>
+
+	<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover">
+		Popover on left
+	</button>
+
+
+	<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-trigger="hover">Click to toggle popover</button>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="js/jquery-3.3.1.slim.min.js" ></script>
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script>
+<script type="text/JavaScript">
+	$(function () {
+		$('[data-toggle="popover"]').popover()
+	})
+</script>
+</body>
+</html>
